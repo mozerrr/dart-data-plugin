@@ -4,8 +4,8 @@ plugins {
     id 'org.jetbrains.kotlin.jvm' version '1.3.21'
 }
 
-group 'andrasferenczi'
-version '0.2.0'
+group 'mozerrr'
+version '0.3.0'
 
 sourceCompatibility = 1.8
 
@@ -22,7 +22,7 @@ dependencies {
 intellij {
     version '2020.3'
     plugins = ['dart:203.8292']
-    pluginName 'Dart Data class methods generator'
+    pluginName 'Dart Data class methods generator mod'
     intellij.updateSinceUntilBuild false
 }
 

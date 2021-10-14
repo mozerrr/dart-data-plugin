@@ -1,7 +1,7 @@
 <idea-plugin>
-    <id>andrasferenczi.dart-data-plugin</id>
-    <name>Dart Data Class</name>
-    <vendor email="a.ferenczi.andras@gmail.com">Andras Ferenczi</vendor>
+    <id>mozerrr.dart-data-plugin-mod</id>
+    <name>Dart Data Class mod</name>
+    <vendor email="newgener@tuta.io">Dmitry Mozer</vendor>
 
     <depends>Dart</depends>
     <!--    To prevent it from being legacy-->
@@ -23,13 +23,18 @@
 
         <p>Featured with a couple additional settings.</p>
         <br/>
-        <p>Find out more on the project's <a href="https://github.com/andrasferenczi/dart-data-plugin">Github page</a>.</p>
+        <p>Find out more on the project's <a href="https://github.com/mozerrr/dart-data-plugin">Github page</a>.</p>
         <br/>
         <em>Not an official plugin.<em/>
     ]]></description>
 
     <change-notes><![CDATA[
         <ul>
+            <li>v0.3.0
+                <ul>
+                    <li>Optimize operator == and hashCode</li>
+                </ul>
+            </li>
             <li>v0.2.0
                 <ul>
                     <li>Null-safety support</li>
@@ -78,38 +83,38 @@
     <extensions defaultExtensionNs="com.intellij">
         <projectConfigurable
                 groupId="editor"
-                instance="andrasferenczi.configuration.DataClassConfigurable"
+                instance="mozerrr.configuration.DataClassConfigurable"
         />
     </extensions>
 
     <actions>
-        <action id="andrasferenczi.action.NamedArgumentConstructorAction"
-                class="andrasferenczi.action.NamedArgumentConstructorAction"
+        <action id="mozerrr.action.NamedArgumentConstructorAction"
+                class="mozerrr.action.NamedArgumentConstructorAction"
                 text="Named Argument Constructor">
             <add-to-group group-id="GenerateGroup"
                           anchor="after"
                           relative-to-action="Generate.Named.Constructor.Dart"/>
         </action>
-        <action id="andrasferenczi.action.DartCopyWithAction"
-                class="andrasferenczi.action.DartCopyWithAction"
+        <action id="mozerrr.action.DartCopyWithAction"
+                class="mozerrr.action.DartCopyWithAction"
                 text="Copy">
             <add-to-group group-id="GenerateGroup"
                           anchor="after"
-                          relative-to-action="andrasferenczi.action.NamedArgumentConstructorAction"/>
+                          relative-to-action="mozerrr.action.NamedArgumentConstructorAction"/>
         </action>
-        <action id="andrasferenczi.action.MapAction"
-                class="andrasferenczi.action.MapAction"
+        <action id="mozerrr.action.MapAction"
+                class="mozerrr.action.MapAction"
                 text="toMap() and fromMap()">
             <add-to-group group-id="GenerateGroup"
                           anchor="after"
-                          relative-to-action="andrasferenczi.action.DartCopyWithAction"/>
+                          relative-to-action="mozerrr.action.DartCopyWithAction"/>
         </action>
-        <action id="andrasferenczi.action.FullDataAction"
-                class="andrasferenczi.action.FullDataAction"
+        <action id="mozerrr.action.FullDataAction"
+                class="mozerrr.action.FullDataAction"
                 text="Data Class Section">
             <add-to-group group-id="GenerateGroup"
                           anchor="after"
-                          relative-to-action="andrasferenczi.action.MapAction"/>
+                          relative-to-action="mozerrr.action.MapAction"/>
         </action>
     </actions>
 </idea-plugin>
