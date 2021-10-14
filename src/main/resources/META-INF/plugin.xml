@@ -95,26 +95,26 @@
                           anchor="after"
                           relative-to-action="Generate.Named.Constructor.Dart"/>
         </action>
-        <action id="mozerrr.action.DartCopyWithAction"
-                class="mozerrr.action.DartCopyWithAction"
-                text="Copy">
+<!--        <action id="mozerrr.action.DartCopyWithAction"-->
+<!--                class="mozerrr.action.DartCopyWithAction"-->
+<!--                text="Copy">-->
+<!--            <add-to-group group-id="GenerateGroup"-->
+<!--                          anchor="after"-->
+<!--                          relative-to-action="mozerrr.action.NamedArgumentConstructorAction"/>-->
+<!--        </action>-->
+<!--        <action id="mozerrr.action.FullDataAction"-->
+<!--                class="mozerrr.action.FullDataAction"-->
+<!--                text="Data Class Section">-->
+<!--            <add-to-group group-id="GenerateGroup"-->
+<!--                          anchor="after"-->
+<!--                          relative-to-action="mozerrr.action.NamedArgumentConstructorAction"/>-->
+<!--        </action>-->
+        <action id="mozerrr.action.EqualsAndHashCodeAction"
+            class="mozerrr.action.EqualsAndHashCodeAction"
+            text="Equals and hashCode mod">
             <add-to-group group-id="GenerateGroup"
-                          anchor="after"
-                          relative-to-action="mozerrr.action.NamedArgumentConstructorAction"/>
-        </action>
-        <action id="mozerrr.action.MapAction"
-                class="mozerrr.action.MapAction"
-                text="toMap() and fromMap()">
-            <add-to-group group-id="GenerateGroup"
-                          anchor="after"
-                          relative-to-action="mozerrr.action.DartCopyWithAction"/>
-        </action>
-        <action id="mozerrr.action.FullDataAction"
-                class="mozerrr.action.FullDataAction"
-                text="Data Class Section">
-            <add-to-group group-id="GenerateGroup"
-                          anchor="after"
-                          relative-to-action="mozerrr.action.MapAction"/>
+                anchor="after"
+                relative-to-action="mozerrr.action.NamedArgumentConstructorAction"/>
         </action>
     </actions>
 </idea-plugin>
