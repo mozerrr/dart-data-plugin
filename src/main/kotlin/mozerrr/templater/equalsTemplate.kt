@@ -30,29 +30,30 @@ fun createEqualsTemplate(
                 addTextSegment(TemplateConstants.EQUALS_VARIABLE_NAME)
             }
             addSpace()
-            addTextSegment("=>")
-            addNewLine()
-            addTextSegment("if")
-            addSpace()
-            withParentheses {
-                addTextSegment(TemplateConstants.EQUALS_VARIABLE_NAME)
-                addDot()
-                addTextSegment("runtimeType")
-                addSpace()
-                addTextSegment("!=")
-                addSpace()
-                addTextSegment("runtimeType")
-            }
-            addSpace()
             withCurlyBraces {
+                addNewLine()
+                addTextSegment("if")
+                addSpace()
+                withParentheses {
+                    addTextSegment(TemplateConstants.EQUALS_VARIABLE_NAME)
+                    addDot()
+                    addTextSegment("runtimeType")
+                    addSpace()
+                    addTextSegment("!=")
+                    addSpace()
+                    addTextSegment("runtimeType")
+                }
+                addSpace()
+                withCurlyBraces {
+                    addReturn()
+                    addSpace()
+                    addTextSegment("false")
+                    addSemicolon()
+                }
+                addNewLine()
+
                 addReturn()
                 addSpace()
-                addTextSegment("false")
-                addSemicolon()
-            }
-            addNewLine()
-            withParentheses {
-                addReturn()
                 addTextSegment(TemplateConstants.EQUALS_VARIABLE_NAME)
                 addSpace()
                 addTextSegment("is")
@@ -64,10 +65,10 @@ fun createEqualsTemplate(
 
                 val variables: List<NamedVariableTemplateParam> = mutableListOf<NamedVariableTemplateParam>().apply {
                     add(
-                        NamedVariableTemplateParamImpl(
-                            "runtimeType",
-                            isNullable = false
-                        )
+                            NamedVariableTemplateParamImpl(
+                                    "runtimeType",
+                                    isNullable = false
+                            )
                     )
                     addAll(selectedVariables)
                 }
@@ -90,9 +91,8 @@ fun createEqualsTemplate(
                 }
 
                 addNewLine()
+                addSemicolon()
+                addSpace()
             }
-            addSemicolon()
-            addSpace()
         }
-
 }

@@ -35,20 +35,16 @@ fun createHashCodeTemplate(
 
             addTextSegment("hashValues")
             withParentheses{
-                variables.forEachIndexed { index, variable ->
+                variables.forEachIndexed {_, variable ->
                     addTextSegment(variable.variableName)
                     addDot()
                     addTextSegment(TemplateConstants.HASHCODE_NAME)
-
-                    if (index != variables.lastIndex) {
-                        addSpace()
-                        addTextSegment(",")
-                        addNewLine()
-                    }
+                    addComma()
+                    addNewLine()
                 }
             }
             addSemicolon()
-            addSpace()
+            addNewLine()
         }
 
 }
